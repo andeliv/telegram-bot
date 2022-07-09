@@ -11,7 +11,10 @@ const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
 bot.start(ctx => ctx.reply("Welcome"));
 bot.hears("hello", ctx => {
-  ctx.reply("Hello to you too!");
+  ctx.reply("Hello there");
+});
+bot.command('list', ctx => {
+  bot.telegram.sendMessage(ctx.chat.id, 'List of new Youtube videos:', {});
 });
 
 bot.launch();
